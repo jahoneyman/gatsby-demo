@@ -2,7 +2,7 @@ interface IHeader {
   text: string;
   to?: string;
   items?: IHeader[];
-  icon?: string;
+  outside_icon?: boolean;
 }
 
 const header: IHeader[] = [
@@ -164,10 +164,12 @@ const header: IHeader[] = [
   {
     text: "Help & Support",
     to: "/",
+    outside_icon: true,
   },
   {
     text: "Store",
     to: "/",
+    outside_icon: true,
   },
   {
     text: "Partner Merchants",
