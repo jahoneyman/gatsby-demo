@@ -67,7 +67,7 @@ const header: IHeader[] = [
         to: "/",
       },
       {
-        text: "",
+        text: "Claim Remittance",
         items: [
           {
             text: "Freelance",
