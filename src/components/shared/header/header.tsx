@@ -6,7 +6,7 @@ import Dropdown from "../dropdown";
 
 import MENUS from "../../../constants/menus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faArrowUpRightFromSquare, faX } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +16,15 @@ const Header = () => {
 
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
+    handleHeading();
+    handleSubHeading();
   };
 
-  const handleHeading = (itemHeading: string) => {
+  const handleHeading = (itemHeading: string = "") => {
     setHeading(heading ? "" : itemHeading);
   };
 
-  const handleSubHeading = (subItemHeading: string) => {
+  const handleSubHeading = (subItemHeading: string = "") => {
     setSubHeading(subHeading ? "" : subItemHeading);
   };
 
@@ -39,9 +41,15 @@ const Header = () => {
       <div className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px]">
         <div className="flex items-center">
           <button onClick={handleIsOpen} className="mr-2 scale-110 2lg:hidden">
-            <span className="block w-4 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
-            <span className="block w-6 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
-            <span className="block w-3 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
+            {isOpen ? (
+              <FontAwesomeIcon icon={faX} />
+            ) : (
+              <>
+                <span className="block w-4 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
+                <span className="block w-6 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
+                <span className="block w-3 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
+              </>
+            )}
           </button>
           <Link to="/" className="text-primary-1 font-bold text-3xl py-3">
             maya
