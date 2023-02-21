@@ -10,6 +10,7 @@ import { faChevronDown, faArrowUpRightFromSquare, faX } from "@fortawesome/free-
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [stickyNav, setStickyNav] = useState(false);
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -32,12 +33,26 @@ const Header = () => {
     setWindowWidth(window.innerWidth);
   };
 
+  const handleStickNav = () => {
+    window.scrollY > 90 && setStickyNav(true);
+    window.scrollY === 0 && setStickyNav(false);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", handleWindowWidthResize);
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleStickNav);
+  }, []);
+
   return (
-    <header className="bg-gray-1 w-full text-white font-medium py-1">
+    <header
+      className={clsx(
+        "bg-gray-1 w-full text-white font-medium py-1 transition-all duration-200",
+        stickyNav && "fixed"
+      )}
+    >
       <nav className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px] z-[100]">
         <div className="flex items-center">
           <button onClick={handleIsOpen} className="mr-2 scale-110 2lg:hidden">
@@ -104,9 +119,8 @@ const Header = () => {
           {MENUS.header.map(({ text, to, items = [], outside_icon = false }, index) => {
             const Tag = to ? Link : "button";
             return (
-              <div className="text-lg">
+              <div key={index} className="text-lg">
                 <li
-                  key={index}
                   onClick={() => handleHeading(text)}
                   className="2lg:flex items-center p-6 transition-colors duration-200 hover:bg-gray-2 cursor-pointer"
                 >
@@ -129,9 +143,8 @@ const Header = () => {
                       const subItems = items.map((sItem) => sItem);
                       const Tag = to ? Link : "button";
                       return (
-                        <div>
+                        <div key={index}>
                           <li
-                            key={index}
                             onClick={() => handleSubHeading(text)}
                             className="py-3 px-10 transition-colors duration-200 hover:bg-gray-2 "
                           >
