@@ -14,24 +14,48 @@ const header: IHeader[] = [
     text: "Services",
     items: [
       {
-        text: "Transfer",
-        to: "/",
+        text: "Protect",
+        items: [
+          { text: "Overview", to: "/" },
+          { text: "Buyer Protect", to: "/" },
+          { text: "Mobile Protect", to: "/" },
+          { text: "Personal Protect", to: "/" },
+        ],
       },
       {
         text: "Transfer",
-        to: "/",
+        items: [
+          { text: "Bills Payment", to: "/" },
+          { text: "Bank Transfer", to: "/" },
+          { text: "Send Money", to: "/" },
+          { text: "Send Money via @Username", to: "/" },
+        ],
       },
       {
         text: "Grow",
-        to: "/",
+        items: [
+          { text: "Crypto", to: "/" },
+          { text: "Savings", to: "/" },
+        ],
       },
       {
         text: "Load",
-        to: "/",
+        items: [
+          { text: "Mobile Load", to: "/" },
+          { text: "Gaming Pins", to: "/" },
+        ],
+      },
+      {
+        text: "Sell",
+        items: [{ text: "Verified Seller Program", to: "/" }],
       },
       {
         text: "Shop",
-        to: "/",
+        items: [
+          { text: "Pay with Maya online", to: "/" },
+          { text: "Pay with Maya card", to: "/" },
+          { text: "Pay with QR", to: "/" },
+        ],
       },
       {
         text: "Explore all features",

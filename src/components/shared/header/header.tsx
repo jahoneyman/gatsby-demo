@@ -2,16 +2,28 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import clsx from "clsx";
 
+import Dropdown from "../dropdown";
+
 import MENUS from "../../../constants/menus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [heading, setHeading] = useState("");
+  const [subHeading, setSubHeading] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleHeading = (itemHeading: string) => {
+    setHeading(heading ? "" : itemHeading);
+  };
+
+  const handleSubHeading = (subItemHeading: string) => {
+    setSubHeading(subHeading ? "" : subItemHeading);
   };
 
   const handleWindowWidthResize = () => {
@@ -45,6 +57,7 @@ const Header = () => {
                   key={index}
                   className="flex items-center mr-[10px] py-3 px-2 transition-colors duration-200 rounded-md hover:bg-gray-2 cursor-pointer group"
                 >
+                  {/* link.name */}
                   <Tag to={to!} className={clsx("flex justify-center items-center")}>
                     {text}
                     {items.length > 0 && (
@@ -57,33 +70,8 @@ const Header = () => {
                       />
                     )}
                   </Tag>
-                  {items?.length > 0 && (
-                    <div className="group-hover:opacity-1 invisible absolute pt-4 opacity-0 transition-[opacity,visibility] duration-200 group-hover:visible group-hover:opacity-100">
-                      <ul
-                        className="rounded-2xl bg-white p-3.5"
-                        style={{ boxShadow: "0px 4px 10px rgba(26,26,26,0.2)" }}
-                      >
-                        {items.map(({ text, to, items = [] }, index) => {
-                          return (
-                            <li
-                              key={index}
-                              className={clsx(
-                                index !== 0 && "mt-3.5 border-t text-black border-t-gray-1 pt-3.5"
-                              )}
-                            >
-                              <Link to="/">
-                                <span className="ml-3">
-                                  <span className="text-xl block font-semibold !leading-none transition-colors duration-200">
-                                    {text}
-                                  </span>
-                                </span>
-                              </Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
+                  {/* link.submenu */}
+                  {items.length > 0 && <Dropdown items={items} />}
                 </li>
               );
             })}
@@ -98,28 +86,79 @@ const Header = () => {
           </div>
         </nav>
       </div>
-      <nav className="mx-3">
-        <ul className={clsx("lg:hidden text-sm", (!isOpen || windowWidth > 1024) && "hidden")}>
+      <nav
+        className={clsx(
+          "2lg:hidden text-sm absolute duration-500 w-full pb-2 bg-gray-1 z-[-1] pt-16",
+          !isOpen || windowWidth > 1140 ? "top-[-100%]" : "top-0"
+        )}
+      >
+        <ul className="">
           {MENUS.header.map(({ text, to, items = [], outside_icon = false }, index) => {
             const Tag = to ? Link : "button";
             return (
-              <li
-                key={index}
-                className="flex items-center mr-[10px] py-3 px-2 transition-colors duration-200 rounded-md hover:bg-gray-2 cursor-pointer"
-              >
-                <Tag to={to!} className={clsx("flex justify-center items-center")}>
-                  {text}
-                  {items.length > 0 && (
-                    <FontAwesomeIcon icon={faChevronDown} className="pl-1 text-primary-1" />
-                  )}
-                  {outside_icon && (
-                    <FontAwesomeIcon
-                      icon={faArrowUpRightFromSquare}
-                      className="pl-1 text-primary-1 text-[10px]"
-                    />
-                  )}
-                </Tag>
-              </li>
+              <div className="text-lg">
+                <li
+                  key={index}
+                  onClick={() => handleHeading(text)}
+                  className="2lg:flex items-center p-6 transition-colors duration-200 hover:bg-gray-2 cursor-pointer"
+                >
+                  <Tag to={to!} className={clsx("2lg:flex justify-center items-center")}>
+                    {text}
+                    {items.length > 0 && (
+                      <FontAwesomeIcon icon={faChevronDown} className="pl-1 text-primary-1" />
+                    )}
+                    {outside_icon && (
+                      <FontAwesomeIcon
+                        icon={faArrowUpRightFromSquare}
+                        className="pl-2 text-primary-1 text-[10px]"
+                      />
+                    )}
+                  </Tag>
+                </li>
+                {items.length > 0 && (
+                  <ul className={clsx(heading !== text && "hidden")}>
+                    {items.map(({ text, to, items = [] }, index) => {
+                      const subItems = items.map((sItem) => sItem);
+                      const Tag = to ? Link : "button";
+                      return (
+                        <div>
+                          <li
+                            key={index}
+                            onClick={() => handleSubHeading(text)}
+                            className="py-3 px-10 transition-colors duration-200 hover:bg-gray-2 "
+                          >
+                            <Tag to={to!} className="flex items-center w-full py-3">
+                              {text}
+                              {items.length > 0 && (
+                                <FontAwesomeIcon
+                                  icon={faChevronDown}
+                                  className="pl-2 text-primary-1 text-[14px]"
+                                />
+                              )}
+                            </Tag>
+                          </li>
+                          {subItems && (
+                            <div>
+                              <ul className={clsx(subHeading !== text && "hidden")}>
+                                {subItems?.map((sItem, sIndex) => {
+                                  return (
+                                    <li
+                                      key={sIndex}
+                                      className="px-16 py-6 transition-colors duration-200 hover:bg-gray-2"
+                                    >
+                                      <Link to={sItem.to!}>{sItem.text}</Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
             );
           })}
         </ul>
