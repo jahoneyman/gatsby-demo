@@ -21,11 +21,11 @@ const Header = () => {
   };
 
   const handleHeading = (itemHeading: string = "") => {
-    setHeading(heading ? "" : itemHeading);
+    setHeading(heading === itemHeading ? "" : itemHeading);
   };
 
   const handleSubHeading = (subItemHeading: string = "") => {
-    setSubHeading(subHeading ? "" : subItemHeading);
+    setSubHeading(subHeading === subItemHeading ? "" : subItemHeading);
   };
 
   const handleWindowWidthResize = () => {
@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header className="bg-gray-1 w-full text-white font-medium py-1">
-      <div className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px]">
+      <nav className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px] z-[100]">
         <div className="flex items-center">
           <button onClick={handleIsOpen} className="mr-2 scale-110 2lg:hidden">
             {isOpen ? (
@@ -93,10 +93,10 @@ const Header = () => {
             </Link>
           </div>
         </nav>
-      </div>
+      </nav>
       <nav
         className={clsx(
-          "2lg:hidden text-sm absolute duration-500 w-full pb-2 bg-gray-1 z-[-1] pt-16",
+          "2lg:hidden text-sm absolute duration-500 w-full pb-2 pt-16 bg-gray-1 z-[-1]",
           !isOpen || windowWidth > 1140 ? "top-[-100%]" : "top-0"
         )}
       >

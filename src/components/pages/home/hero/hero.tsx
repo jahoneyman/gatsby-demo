@@ -3,7 +3,7 @@ import HeroBg from "./../../../shared/heroBg/heroBg";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="absolute z-[-2]">
       <HeroBg />
     </section>
   );
