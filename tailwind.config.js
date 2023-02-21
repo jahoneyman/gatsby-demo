@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/pages/**/*.{js,jsx,ts,tsx}", "./src/components/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -22,6 +23,12 @@ module.exports = {
           1: "#202122",
           2: "#484444",
         },
+      },
+      fontSize: {
+        "4xl": ["2.5rem"],
+        "6xl": ["4rem"],
+        "7xl": ["5rem"],
+        "8xl": ["6.5rem"],
       },
     },
     screens: {
