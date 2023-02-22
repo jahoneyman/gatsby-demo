@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby";
 import Layout from "../components/shared/layout";
 import Hero from "../components/pages/home/hero";
 import Features from "../components/pages/home/features";
+import Perks from "../components/pages/home/perks";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -10,6 +11,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div className="absolute z-[-2]">
         <Hero />
         <Features />
+        <Perks />
       </div>
     </Layout>
   );

@@ -8,7 +8,7 @@ const styles = {
     lg: "text-[72px] font-bold leading-tight 2xl:text-6xl xl:text-[56px] xl:leading-dense md:text-[44px]",
     md: "text-6xl font-bold leading-dense",
     sm: "text-4xl font-semibold",
-    xs: "text-base font-bold tracking-wider uppercase",
+    xs: "text-base font-bold tracking-wider",
   },
   theme: {
     white: "text-white",
