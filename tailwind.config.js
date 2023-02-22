@@ -8,6 +8,7 @@ module.exports = {
         primary: {
           1: "#75eea5",
           2: "#f0fcec",
+          3: "#1f5522",
         },
         secondary: {
           1: "#205424",
