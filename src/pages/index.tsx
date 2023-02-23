@@ -8,7 +8,7 @@ import Perks from "../components/pages/home/perks";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <div className="absolute z-[-2]">
+      <div className="absolute z-[-2] w-full">
         <Hero />
         <Features />
         <Perks />

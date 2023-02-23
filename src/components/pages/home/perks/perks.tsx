@@ -9,28 +9,37 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 const Perks = () => {
   return (
     <section className="h-screen flex items-center justify-center bg-gray-1">
-      <div className="w-[1200px]">
-        <Heading className="flex items-center justify-between" size="sm" tag="p">
-          <div className="flex items-center w-[650px]">
+      <div className="2lg:w-[1100px]">
+        <Heading
+          className="flex flex-col lg:flex-row items-center justify-between mx-2 w-full"
+          size="sm"
+          tag="p"
+        >
+          <div className="flex items-center lg:w-[650px]">
             <StaticImage src="./images/gift.png" alt="icon of gift" />
-            <div className="ml-10">
-              <span className="text-primary-1 font-bold">Perks all the way, baby!</span>
+            <div className="ml-5 md:ml-10">
+              <span className="text-2xl md:text-3xl text-primary-1 font-bold">
+                Perks all the way, baby!
+              </span>
               <p className="text-base text-white font-normal">
                 Earn cashback upon signing up, referring friends and buying gaming credits.
               </p>
             </div>
           </div>
-          <div className="ml-8">
+          {/* Button */}
+          <button className="mt-5 lg:mt-0 ml-8 bg-primary-1 rounded-2xl transition-transform duration-200 hover:scale-110">
             <Link
               to="/"
-              className="flex justify-center items-center py-3.5 px-24 font-semibold rounded-2xl bg-primary-1 border-2 border-transparent transition-transform duration-200 hover:scale-110"
+              className="flex justify-center items-center py-3.5 px-12 lg:px-24 font-semibold border-2 border-transparent"
             >
-              <div className="border-2 border-transparent rounded-2xl text-xl">Get the App</div>
+              <div className="border-2 border-transparent rounded-2xl text-lg lg:text-xl">
+                Get the App
+              </div>
             </Link>
-          </div>
+          </button>
         </Heading>
-        <div className="flex text-white my-10">
-          <div className="bg-primary-3 rounded-xl mx-2 p-5">
+        <div className="lg:flex text-white my-10">
+          <div className="mb-4 lg:mb-0 bg-primary-3 rounded-xl mx-2 p-5">
             <Heading className="flex justify-between" size="xs" tag="h1">
               <div className="flex text-lg mb-2">
                 <FontAwesomeIcon icon={faCheckCircle} className="text-3xl text-primary-1 mr-5" />
