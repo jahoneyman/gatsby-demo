@@ -3,10 +3,10 @@ import clsx from "clsx";
 
 const styles = {
   size: {
-    "2xl": "text-8xl font-bold leading-dense",
-    xl: "text-7xl font-bold leading-dense",
-    lg: "text-[72px] font-bold leading-tight 2xl:text-6xl xl:text-[56px] xl:leading-dense md:text-[44px]",
-    md: "text-6xl font-bold leading-dense",
+    "2xl": "text-8xl font-bold",
+    xl: "text-7xl font-bold",
+    lg: "text-[72px] font-bold leading-tight 2xl:text-6xl xl:text-[56px] md:text-[44px]",
+    md: "text-6xl font-bold",
     sm: "text-4xl font-semibold",
     xs: "text-base font-bold tracking-wider",
   },
