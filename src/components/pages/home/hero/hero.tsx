@@ -3,7 +3,7 @@ import HeroBg from "./../../../shared/heroBg/heroBg";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="w-full h-full">
       <HeroBg />
     </section>
   );

@@ -113,7 +113,7 @@ const Header = () => {
       <nav
         className={clsx(
           "2lg:hidden text-sm absolute duration-500 w-full pb-2 pt-16 bg-gray-1 z-[-1]",
-          !isOpen || windowWidth > 1140 ? "top-[-1000%] opacity-0" : "top-0 opacity-100 "
+          !isOpen || windowWidth > 1140 ? "top-[-100%] invisible opacity-0" : "top-0 opacity-100 "
         )}
       >
         <ul className="">
