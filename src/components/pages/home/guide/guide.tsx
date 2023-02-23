@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import clsx from "clsx";
 
 import Heading from "./../../../shared/heading";
-import "../../../../styles/carousel.css";
 
 const images = [
   "https://via.placeholder.com/300x200?text=Slide%201",
