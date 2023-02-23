@@ -4,6 +4,7 @@ import Layout from "../components/shared/layout";
 import Hero from "../components/pages/home/hero";
 import Features from "../components/pages/home/features";
 import Perks from "../components/pages/home/perks";
+import Guide from "../components/pages/home/guide";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Hero />
         <Features />
         <Perks />
+        <Guide />
       </div>
     </Layout>
   );
