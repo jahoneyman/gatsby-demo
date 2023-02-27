@@ -17,9 +17,9 @@ const styles = {
 };
 
 interface IHeading {
-  className: string;
+  className?: string;
   tag: keyof JSX.IntrinsicElements;
-  size: string;
+  size?: string;
   children: string | JSX.Element | JSX.Element[] | (() => JSX.Element) | null;
 }
 
