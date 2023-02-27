@@ -5,6 +5,7 @@ import Hero from "../components/pages/home/hero";
 import Features from "../components/pages/home/features";
 import Perks from "../components/pages/home/perks";
 import Guide from "../components/pages/home/guide";
+import NewFeatures from "./../components/pages/home/new_features/new_features";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -14,6 +15,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Features />
         <Perks />
         <Guide />
+        <NewFeatures />
       </div>
     </Layout>
   );
