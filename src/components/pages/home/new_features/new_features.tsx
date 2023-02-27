@@ -79,7 +79,7 @@ const NewFeatures = () => {
 
   return (
     <section className="flex items-center justify-center bg-gray-1 py-24 px-8">
-      <div>
+      <div className="lg:w-[1200px]">
         <div className="text-center mb-8">
           <div className="text-white text-xl tracking-wider font-bold">WHAT'S NEW</div>
           <Heading
