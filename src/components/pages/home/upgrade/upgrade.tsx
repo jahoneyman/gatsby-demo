@@ -36,7 +36,7 @@ const items: IUpgrade[] = [
 export const Upgrade: React.FC<upgradeProps> = ({}) => {
   return (
     <section className="flex items-center justify-center bg-gray-1 py-24 text-white">
-      <div className="bg-card-0 w-full flex flex-col lg:flex-row-reverse pt-20 rounded-3xl px-5 lg:w-[1200px]">
+      <div className="bg-card-0 w-full flex flex-col md:flex-row-reverse pt-20 rounded-3xl px-5 mx-8 md:mx-0 md:w-[1200px]">
         <div>
           <Heading className="text-3xl font-semibold mb-4" tag="div">
             <div>Upgrade your account</div>
@@ -55,13 +55,13 @@ export const Upgrade: React.FC<upgradeProps> = ({}) => {
               ))}
             </ul>
           </div>
+          <div className="mt-16 flex justify-center md:justify-start">
+            <button className="bg-primary-1 text-lg text-gray-1 font-semibold py-4 px-5 tracking-wider rounded-2xl transition-transform duration-200 hover:scale-105">
+              Tell me more
+            </button>
+          </div>
         </div>
-        <div className="mt-16 flex justify-center">
-          <button className="bg-primary-1 text-lg text-gray-1 font-semibold py-4 px-5 tracking-wider rounded-2xl transition-transform duration-200 hover:scale-105 sm:hidden">
-            Tell me more
-          </button>
-        </div>
-        <div className="lg:w-9/12 flex items-center justify-center mt-10">
+        <div className="md:w-9/12 flex items-center justify-center mt-10">
           <StaticImage
             src="../../../../assets/images/upgrade/upgrade.png"
             alt="upgrade"
