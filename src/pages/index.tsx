@@ -13,7 +13,7 @@ import Apps from "../components/pages/home/apps";
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <div className="absolute z-[-2] w-full">
+      <div>
         <Hero />
         <Features />
         <Perks />

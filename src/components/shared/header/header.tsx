@@ -50,7 +50,7 @@ const Header = () => {
     <header
       className={clsx(
         "bg-gray-1 w-full text-white font-medium py-1 transition-all duration-200",
-        stickyNav && "fixed"
+        stickyNav && "fixed z-10"
       )}
     >
       <nav className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px] z-[100]">
@@ -102,7 +102,7 @@ const Header = () => {
           <div className="ml-8">
             <Link
               to="/"
-              className="flex justify-center items-center py-2 px-3 text-accent-1 font-bold rounded-2xl bg-primary-1 border-2 border-transparent transition-transform duration-200 hover:scale-110"
+              className="flex justify-center items-center py-2 px-3 text-accent-1 font-bold rounded-2xl bg-primary-1 transition-transform duration-200 hover:scale-110"
             >
               <div className="border-2 border-transparent rounded-2xl text-sm">Get the App</div>
             </Link>
