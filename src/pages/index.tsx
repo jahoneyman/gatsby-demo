@@ -8,6 +8,7 @@ import Guide from "../components/pages/home/guide";
 import NewFeatures from "./../components/pages/home/new_features";
 import Upgrade from "../components/pages/home/upgrade";
 import Fomo from "../components/pages/home/fomo";
+import Apps from "../components/pages/home/apps";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -20,6 +21,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <NewFeatures />
         <Upgrade />
         <Fomo />
+        <Apps />
       </div>
     </Layout>
   );
