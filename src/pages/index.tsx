@@ -7,6 +7,7 @@ import Perks from "../components/pages/home/perks";
 import Guide from "../components/pages/home/guide";
 import NewFeatures from "./../components/pages/home/new_features";
 import Upgrade from "../components/pages/home/upgrade";
+import Fomo from "../components/pages/home/fomo";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -18,6 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Guide />
         <NewFeatures />
         <Upgrade />
+        <Fomo />
       </div>
     </Layout>
   );
@@ -25,4 +27,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const Head: HeadFC = () => (
+  <title>Maya Philippines - Secure Online Payment Account | Maya.ph</title>
+);
