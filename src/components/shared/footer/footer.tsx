@@ -148,7 +148,7 @@ const Footer = () => {
           <div>
             <ul className="mt-12 grid grid-rows-5 grid-flow-col gap-5 text-primary-1 text-base">
               {navItems.map(({ name, to }, index) => (
-                <li>
+                <li key={index}>
                   <Link to={to} className="transition-colors duration-200 hover:text-white">
                     {name}
                     <FontAwesomeIcon
@@ -179,17 +179,17 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12">
-          <ul className="grid grid-cols-2 gap-4 w-8/12 lg:w-full lg:px-12 lg:grid-cols-3 lg:text-center">
-            <li>
-              <Link to="https://www.maya.ph/privacy">Privacy Policy</Link>
-            </li>
-            <li>
-              <Link to="https://www.maya.ph/terms-and-conditions">Terms & Conditions</Link>
-            </li>
-            <li className="col-span-2 lg:col-span-1 lg:order-first">
-              © Copyright Maya 2022 All rights reserved.
-            </li>
+        <div className="mt-12 lg:w-11/12 mx-auto">
+          <ul className="grid grid-cols-2 gap-4 w-8/12 lg:w-full lg:px-12 lg:flex lg:flex-row-reverse lg:justify-between lg:text-center">
+            <div className="grid grid-cols-2 col-span-2 md:flex">
+              <li>
+                <Link to="https://www.maya.ph/privacy">Privacy Policy</Link>
+              </li>
+              <li className="ml-3">
+                <Link to="https://www.maya.ph/terms-and-conditions">Terms & Conditions</Link>
+              </li>
+            </div>
+            <li className="col-span-2 ">© Copyright Maya 2022 All rights reserved.</li>
           </ul>
         </div>
       </div>

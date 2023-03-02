@@ -1,5 +1,9 @@
 import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
+import { graphql } from "gatsby";
+
+import Seo from "../components/shared/seo";
+
 import Layout from "../components/shared/layout";
 import Hero from "../components/pages/home/hero";
 import Features from "../components/pages/home/features";
@@ -29,6 +33,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-  <title>Maya Philippines - Secure Online Payment Account | Maya.ph</title>
-);
+export const Head: HeadFC = () => <Seo title="Home Page" />;
