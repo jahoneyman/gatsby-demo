@@ -87,92 +87,109 @@ const navItems = [
 
 const Footer = () => {
   return (
-    <footer className="flex items-center bg-gray-1 pt-24 pb-12 text-white text-sm">
-      <div className="px-4 w-full">
-        <Link to="/" className="text-primary-1 font-bold text-3xl py-3">
-          maya
-        </Link>
-        <ul className="flex mt-5">
-          {platformItems.map(({ to, icon }, index) => (
-            <li
-              key={index}
-              className="flex items-center justify-center text-white bg-black p-5 mr-2 w-6 h-6 rounded-full cursor-pointer transition-colors duration-200 hover:bg-white hover:text-black"
-            >
-              <Link to={to} className="mt-1">
-                <FontAwesomeIcon icon={icon} className="text-2xl" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <ul className="mt-5">
-          <li className="flex justify-evenly">
-            <div className="w-2/12 pt-1 text-center text-primary-1">
-              <FontAwesomeIcon icon={faPhone} />
-            </div>
-            <div className="w-10/12">
-              <ul className="text-sm leading-6">
-                <li>Maya Customer Hotline: (+632) 8845-7788</li>
-                <li>Domestic Toll-Free: 1-800-1084-57788</li>
-                <li>Mobile: Dial *788 using your Smart mobile phone</li>
-              </ul>
-            </div>
-          </li>
-          <li className="flex mt-3">
-            <div className="w-2/12 pt-1 text-center text-primary-1">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </div>
-            <div className="w-10/12">
-              <Link
-                to="/"
-                className="text-sm underline transition-colors duration-200 hover:text-primary-1"
-              >
-                support@maya.ph
-              </Link>
-            </div>
-          </li>
-        </ul>
-        <div className="mt-5 leading-6">
-          <p>
-            Maya is powered by the country's only end-to-end digital payments company Maya
-            Philippines, Inc. and Maya Bank, Inc. for digital banking services. Maya Philippines,
-            Inc. and Maya Bank, Inc. are regulated by the Bangko Sentral ng Pilipinas.
-          </p>
-          <h4 className="text-sm underline transition-colors duration-200 hover:text-primary-1">
-            <Link to="">www.bsp.gov.ph</Link>
-          </h4>
-        </div>
-        <div>
-          <ul className="mt-12 grid grid-rows-5 grid-flow-col gap-5 text-primary-1 text-base">
-            {navItems.map(({ name, to }, index) => (
-              <li>
-                <Link to={to} className="transition-colors duration-200 hover:text-white">
-                  {name}
-                  <FontAwesomeIcon
-                    icon={faArrowUpRightFromSquare}
-                    className={clsx(
-                      "text-xs ml-1",
-                      name === "Store" || name === "Help & Support" ? "inline-block" : "hidden"
-                    )}
-                  />
-                </Link>
+    <footer className="flex items-center justify-center bg-gray-1 pt-24 pb-12 text-white text-sm">
+      <div className="w-11/12">
+        <div className="px-4 w-full lg:flex justify-evenly">
+          <div className="lg:w-1/3">
+            <Link to="/" className="text-primary-1 font-bold text-3xl py-3">
+              maya
+            </Link>
+            <ul className="flex mt-5">
+              {platformItems.map(({ to, icon }, index) => (
+                <li
+                  key={index}
+                  className="flex items-center justify-center text-white bg-black p-5 mr-2 w-6 h-6 rounded-full cursor-pointer transition-colors duration-200 hover:bg-white hover:text-black"
+                >
+                  <Link to={to} className="mt-1">
+                    <FontAwesomeIcon icon={icon} className="text-2xl" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-5">
+              <li className="flex justify-evenly lg:justify-start">
+                <div className="w-2/12 pt-1 text-center text-primary-1">
+                  <FontAwesomeIcon icon={faPhone} />
+                </div>
+                <div className="w-10/12">
+                  <ul className="text-sm leading-6">
+                    <li>Maya Customer Hotline: (+632) 8845-7788</li>
+                    <li>Domestic Toll-Free: 1-800-1084-57788</li>
+                    <li>Mobile: Dial *788 using your Smart mobile phone</li>
+                  </ul>
+                </div>
               </li>
-            ))}
-          </ul>
-        </div>
-        <div className="w-2/12 mt-16">
-          <Link to="https://seal.controlcase.com/index.php?page=showCert&cId=3984518998">
-            <StaticImage src="../../../assets/images/footer/compliancebadge.webp" alt="" />
-          </Link>
+              <li className="flex mt-3">
+                <div className="w-2/12 pt-1 text-center text-primary-1">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </div>
+                <div className="w-10/12">
+                  <Link
+                    to="/"
+                    className="text-sm underline transition-colors duration-200 hover:text-primary-1"
+                  >
+                    support@maya.ph
+                  </Link>
+                </div>
+              </li>
+            </ul>
+            <div className="mt-5 leading-6">
+              <p>
+                Maya is powered by the country's only end-to-end digital payments company Maya
+                Philippines, Inc. and Maya Bank, Inc. for digital banking services. Maya
+                Philippines, Inc. and Maya Bank, Inc. are regulated by the Bangko Sentral ng
+                Pilipinas.
+              </p>
+              <h4 className="text-sm underline transition-colors duration-200 hover:text-primary-1">
+                <Link to="">www.bsp.gov.ph</Link>
+              </h4>
+            </div>
+          </div>
+          <div>
+            <ul className="mt-12 grid grid-rows-5 grid-flow-col gap-5 text-primary-1 text-base">
+              {navItems.map(({ name, to }, index) => (
+                <li>
+                  <Link to={to} className="transition-colors duration-200 hover:text-white">
+                    {name}
+                    <FontAwesomeIcon
+                      icon={faArrowUpRightFromSquare}
+                      className={clsx(
+                        "text-xs ml-1",
+                        name === "Store" || name === "Help & Support" ? "inline-block" : "hidden"
+                      )}
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-2/12 mt-16">
+            <div className="flex flex-col items-end">
+              <div className="hidden lg:flex flex-col items-end">
+                <div className="text-end text-lg font-bold">Scan to download the Maya app</div>
+                <div className="w-2/4 p-1 bg-white rounded-xl mt-3">
+                  <StaticImage src="../../../assets/images/footer/qr-code.svg" alt="" />
+                </div>
+              </div>
+              <div className="lg:w-1/3 mt-8">
+                <Link to="https://seal.controlcase.com/index.php?page=showCert&cId=3984518998">
+                  <StaticImage src="../../../assets/images/footer/compliancebadge.webp" alt="" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="mt-12">
-          <ul className="grid grid-cols-2 gap-4 w-8/12">
+          <ul className="grid grid-cols-2 gap-4 w-8/12 lg:w-full lg:px-12 lg:grid-cols-3 lg:text-center">
             <li>
               <Link to="https://www.maya.ph/privacy">Privacy Policy</Link>
             </li>
             <li>
               <Link to="https://www.maya.ph/terms-and-conditions">Terms & Conditions</Link>
             </li>
-            <li className="col-span-2">© Copyright Maya 2022 All rights reserved.</li>
+            <li className="col-span-2 lg:col-span-1 lg:order-first">
+              © Copyright Maya 2022 All rights reserved.
+            </li>
           </ul>
         </div>
       </div>
