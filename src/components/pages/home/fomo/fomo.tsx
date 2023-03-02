@@ -7,8 +7,8 @@ import TextInput from "../../../shared/textInput";
 const Fomo = () => {
   return (
     <section className="flex items-center justify-center bg-gray-1 py-24 text-white">
-      <div className="bg-gray-3 mx-8 w-full h-[550px] py-12 px-3 rounded-3xl text-center md:text-start md:w-[950px] flex flex-col md:flex-row items-center justify-between md:justify-center">
-        <div className="mx-12">
+      <div className="bg-gray-3 mx-8 w-full h-[550px] md:h-full py-12 px-3 rounded-3xl text-center md:text-start md:w-[950px] flex flex-col md:flex-row items-center justify-between md:justify-center">
+        <div className="xl:mx-12">
           <StaticImage
             src="../../../../assets/images/fomo/mailbox.png"
             alt="mailbox"
