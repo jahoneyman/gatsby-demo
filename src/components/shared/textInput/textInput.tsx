@@ -31,10 +31,14 @@ const TextInput = forwardRef<Ref, ITextInput>(
 
     return (
       <div className="flex" {...otherProps}>
-        <input type="text" placeholder={placeholderText} className={className} />
+        <input
+          type="text"
+          placeholder={placeholderText}
+          className={clsx("ml-4 md:ml-0 text-black", className)}
+        />
         <button
           className={clsx(
-            "absolute md:relative right-11 md:right-28 text-lg text-gray-1 font-medium py-3 px-5 tracking-wider rounded-2xl transition-transform duration-200 scale-105 hover:scale-110",
+            "relative right-5 text-lg text-gray-1 font-medium py-3 px-5 tracking-wider rounded-2xl transition-transform duration-200 scale-105 hover:scale-110",
             buttonColor
           )}
         >

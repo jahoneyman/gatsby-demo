@@ -20,7 +20,7 @@ const Fomo = () => {
             <h1 className="text-4xl font-bold py-7">No more FOMO</h1>
           </Heading>
           <p className="text-xl font-semibold mb-8">Stay updated on Maya's deal and promos</p>
-          <div>
+          <div className="w-full mx-auto">
             <TextInput
               placeholderText="Enter your email here"
               textInputBgColor="bg-gray-5"
