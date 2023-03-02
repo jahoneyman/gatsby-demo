@@ -49,12 +49,12 @@ const Header = () => {
   return (
     <header
       className={clsx(
-        "bg-gray-1 w-full text-white font-medium py-1 transition-all duration-200",
-        stickyNav && "fixed z-10"
+        "bg-gray-1 w-full text-white font-medium py-1 transition-all duration-200 z-10",
+        stickyNav && "fixed"
       )}
     >
       <nav className="flex items-center justify-between mx-5 2lg:mx-auto 2lg:w-[1100px] xl:w-[1200px] z-[100]">
-        <div className="flex items-center">
+        <div className="flex items-center z-10">
           <button onClick={handleIsOpen} className="mr-2 scale-110 2lg:hidden">
             {isOpen ? (
               <FontAwesomeIcon icon={faX} />
@@ -99,7 +99,7 @@ const Header = () => {
               );
             })}
           </ul>
-          <div className="ml-8">
+          <div className="ml-8 z-10">
             <Link
               to="/"
               className="flex justify-center items-center py-2 px-3 text-accent-1 font-bold rounded-2xl bg-primary-1 transition-transform duration-200 hover:scale-110"
@@ -112,7 +112,7 @@ const Header = () => {
       {/* Mobile View */}
       <nav
         className={clsx(
-          "2lg:hidden text-sm absolute duration-500 w-full pb-2 pt-16 bg-gray-1 z-[-1]",
+          "2lg:hidden text-sm absolute duration-500 w-full pb-2 pt-16 bg-gray-1",
           !isOpen || windowWidth > 1140 ? "top-[-100%] invisible opacity-0" : "top-0 opacity-100 "
         )}
       >
