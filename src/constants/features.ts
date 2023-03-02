@@ -7,7 +7,6 @@ interface IFeatures {
   name: string;
   description: string;
   image: string;
-  alt_image: string;
 }
 
 const features: IFeatures[] = [
