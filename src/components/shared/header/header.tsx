@@ -59,11 +59,11 @@ const Header = () => {
             {isOpen ? (
               <FontAwesomeIcon icon={faX} />
             ) : (
-              <>
+              <ul>
                 <span className="block w-4 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
                 <span className="block w-6 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
                 <span className="block w-3 h-[2.5px] mb-1 bg-white rounded z-[1]"></span>
-              </>
+              </ul>
             )}
           </button>
           <Link to="/" className="text-primary-1 font-bold text-3xl py-3">

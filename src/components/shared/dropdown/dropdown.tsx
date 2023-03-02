@@ -7,7 +7,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const Dropdown = ({ items }): JSX.Element => {
   return (
-    <div className="absolute top-14 invisible opacity-0 transition-[opacity,visibility] duration-200 group-hover:opacity-1 group-hover:visible group-hover:opacity-100">
+    <div className="absolute top-14 invisible opacity-0 transition-[opacity,visibility] duration-200 group-hover:opacity-1 group-hover:visible group-hover:opacity-100 hover:opacity-1 hover:visible hover:opacity-100 group-hover:block hover:block z-10">
       {/* First SubItems */}
       <ul
         className={clsx(
