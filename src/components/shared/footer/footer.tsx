@@ -148,7 +148,7 @@ const Footer = () => {
           <div>
             <ul className="mt-12 grid grid-rows-5 grid-flow-col gap-5 text-primary-1 text-base">
               {navItems.map(({ name, to }, index) => (
-                <li>
+                <li key={index}>
                   <Link to={to} className="transition-colors duration-200 hover:text-white">
                     {name}
                     <FontAwesomeIcon
