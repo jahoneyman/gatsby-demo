@@ -34,7 +34,7 @@ const TextInput = forwardRef<Ref, ITextInput>(
         <input type="text" placeholder={placeholderText} className={className} />
         <button
           className={clsx(
-            "absolute right-11 text-lg text-gray-1 font-medium py-3 px-5 tracking-wider rounded-2xl transition-transform duration-200 hover:scale-105 sm:hidden",
+            "absolute md:relative right-11 md:right-28 text-lg text-gray-1 font-medium py-3 px-5 tracking-wider rounded-2xl transition-transform duration-200 hover:scale-105",
             buttonColor
           )}
         >
