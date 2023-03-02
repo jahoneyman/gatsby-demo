@@ -21,7 +21,7 @@ const Dropdown = ({ items }): JSX.Element => {
           const Tag = item.to ? Link : "button";
 
           return (
-            <li key={index} className="group/sub flex group-hover:block hover:block s">
+            <li key={index} className="group/sub flex group-hover:block hover:block">
               <Tag
                 to={item.to}
                 className="py-3.5 px-2 w-full hover:bg-primary-2 rounded-xl flex items-center justify-between"
