@@ -10,7 +10,6 @@ interface IFeatures {
   title: string;
   body: string;
   button_text: string;
-  icon: string;
   color: string;
   image: string;
 }
@@ -21,7 +20,6 @@ const features: IFeatures[] = [
     title: "PayMaya is now Maya",
     body: "That’s right, we’re more than a wallet now. We’ve got our own digital bank, crypto exchange, and so much more.",
     button_text: "Discover Maya",
-    icon: "icon",
     color: "bg-card-0",
     image: feature0,
   },
@@ -30,7 +28,6 @@ const features: IFeatures[] = [
     title: "What? You can get your very own Maya physical card?",
     body: "That’s right! Get your own sleek, black, and suave Maya card so you can handle your transactions in just a tap or a swipe.",
     button_text: "Get a Maya card",
-    icon: "icon",
     color: "bg-card-1",
     image: feature1,
   },
@@ -39,7 +36,6 @@ const features: IFeatures[] = [
     title: "We’ve got everything—and dark mode too",
     body: "Maya now comes with one of the greatest innovations of the 21st century. That’s right, we’ve got dark mode now! We hear it puts less strain on the eyes and saves battery (but we think it’s nice to look at, too!).",
     button_text: "",
-    icon: "icon",
     color: "bg-card-2",
     image: feature2,
   },
@@ -48,7 +44,6 @@ const features: IFeatures[] = [
     title: "Zero to ₱15,000 in seconds",
     body: "Get approval of up to ₱15,000 credit line with Maya Credit!",
     button_text: "Apply to Maya Credit",
-    icon: "icon",
     color: "bg-card-3",
     image: feature3,
   },
@@ -57,7 +52,6 @@ const features: IFeatures[] = [
     title: "Did you know you can send money using @usernames?",
     body: "Don't have a friend's bank account memorized? Too many details to enter? Well, with Maya, all you need is your receiver's username and you're ready to send away.",
     button_text: "Create your @username now",
-    icon: "icon",
     color: "bg-card-4",
     image: feature4,
   },
@@ -66,7 +60,6 @@ const features: IFeatures[] = [
     title: "Crypto for all",
     body: "Not sure where to start? We got you.\nCash in. Buy. Hodl. Sell. Save. Spend. Learn. All in one app.",
     button_text: "Tell me more",
-    icon: "icon",
     color: "bg-card-5",
     image: feature5,
   },

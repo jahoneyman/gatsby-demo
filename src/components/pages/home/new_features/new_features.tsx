@@ -39,7 +39,7 @@ const NewFeatures = () => {
 
         <ul className="text-white relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {/* card */}
-          {features.map(({ title, body, button_text, icon, available, color, image }, index) => {
+          {features.map(({ title, body, button_text, available, color, image }, index) => {
             return (
               <li
                 key={index}
